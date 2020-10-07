@@ -9,4 +9,8 @@ class Restaurant
   def closing_time(hours_of_business)
     "#{(opening_time.to_i + hours_of_business)}:00"
   end
+
+  def add_dish(dish)
+    @dishes << dish
+  end
 end
