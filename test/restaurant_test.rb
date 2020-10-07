@@ -55,7 +55,7 @@ class RestaurantTest < Minitest::Test
     refute restaurant2.open_for_lunch?
   end
 
-  def test_restruant_can_give_dish_names_on_menu
+  def test_restruant_can_produce_dish_names_on_menu
     restaurant2 = Restaurant.new('16:00', 'Il Posto')
 
     restaurant2.add_dish('Burrata')
@@ -64,5 +64,13 @@ class RestaurantTest < Minitest::Test
 
     expected = ["BURRATA", "PIZZETTA", "RAVIOLI"]
     assert_equal expected, restaurant2.menu_dish_names
+  end
+
+  def test_restruant_can_announce_closing_time
+    restaurant1 = Restaurant.new('6:00', 'Fuel Cafe')
+    restaurant2 = Restaurant.new('16:00', 'Il Posto')
+
+    assert_equal "Fuel Cafe will be closing at 11:00AM", restaurant1.announce_closing_time(5)
+    assert_equal "Il Posto will be closing at 11:00PM", restaurant1.announce_closing_time(7)
   end
 end
