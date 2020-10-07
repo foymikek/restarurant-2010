@@ -36,9 +36,9 @@ class Restaurant
 
   def determine_hour(hours_of_business)
     if closing_time(hours_of_business).to_i > 12
-      return "#{closing_time(hours_of_business).to_i - 12}:00PM"
+      "#{closing_time(hours_of_business).to_i - 12}:00PM"
     else
-      return "#{closing_time(hours_of_business).to_i}:00AM"
+      "#{closing_time(hours_of_business).to_i}:00AM"
     end
   end
 
