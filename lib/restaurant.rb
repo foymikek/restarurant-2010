@@ -13,4 +13,13 @@ class Restaurant
   def add_dish(dish)
     @dishes << dish
   end
+
+  def open_for_lunch?
+    if @opening_time.to_i <= 12
+      true
+    elsif @opening_time.to_i > 12
+      false
+    end
+    # require "pry"; binding.pry
+  end
 end
