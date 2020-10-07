@@ -19,7 +19,15 @@ class Restaurant
       true
     elsif @opening_time.to_i > 12
       false
+    else
+      "Call restaurant for more information."
     end
-    # require "pry"; binding.pry
   end
+
+  def menu_dish_names
+    excited_dish_names = @dishes.map do |dish|
+      dish.upcase
+    end
+  end
+  
 end
